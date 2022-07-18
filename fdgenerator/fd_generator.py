@@ -22,7 +22,7 @@ class FDGenerator:
         if not Path(source_file).exists():
             sys.exit(f"Create source.txt on {self.CURRENT_DIR}, and write file or directory names you'd like to generate.")
         
-        print(f"Creating {option} starts.")
+        print(f"Generating {option} starts.")
         with open(source_file, "r") as r:
             for line in r:
                 target: str = f"{self.OUTPUT_DIR}/{line}".strip()
@@ -33,7 +33,7 @@ class FDGenerator:
                 elif option == "dir":
                     Path(target).mkdir(parents=True, exist_ok=True)
 
-        print(f"Creating {option} ends.")
+        print(f"Generating {option} ends.")
 
 if __name__ == "__main__":
     FDGenerator().main()
